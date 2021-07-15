@@ -4,4 +4,11 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+        
+    - name: Install Java on server
+      apt: 
+        name: "{{ item }}"
+        with_items:
+          - curl
+        status: present
 
